@@ -9,7 +9,7 @@ export const assignments = [
 {
     id: "assignment2",
     title: "Uppgift 2 - Produktsida med kundvagn",
-   link: "../assignment2/index.html",
+   link: "assignment2/index.html",
    description: "Bygga en produktsida som dynamiskt renderar produkter från en egen datastruktur och implementerar en kundvagn som sparar användarens val i webbläsaren."
    }
 ];

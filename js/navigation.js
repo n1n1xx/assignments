@@ -2,18 +2,20 @@ import { assignments } from "./assignments.js";
 
 export function createNavigation() {
     const navList = document.querySelector("nav ul");
-    const currentPath = window.location.pathname.split("/").slice(-2).join("/");
+const path = window.location.pathname;
 
-    navList.innerHTML = "";
+const isInSubfolder = path.includes("/assignment");
+navList.innerHTML = "";
 
     assignments.forEach(assignment => {
         const li = document.createElement("li");
         const a = document.createElement("a");
 
-        a.href = assignment.link;
+        const basePath = isInSubfolder ? "../" :"";
+        a.href = basePath + assignment.link;
         a.textContent = assignment.title;
 
-        if (assignment.link=== currentPath) {
+        if (path.endsWith(assignment.link)) {
             a.classList.add("active");
         }
 
