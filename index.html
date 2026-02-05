@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+    <meta charset="UTF-8">
+    <title>Inlämningsuppgifter</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Webbutveckling</h1>
+        <nav>
+            <ul></ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Om mig</h2>
+            <p><strong>Namn:</strong> Haneen </p>
+            <p><strong>Kurs:</strong> Webbteknik 3 - 1ME322</p>
+            <p><strong>GitHub:</strong> n1n1xx</p>
+        </section>
+    </main>
+
+<script type="module">
+import { assignments } from "./js/assignments.js";
+import { createNavigation } from "./js/navigation.js";
+
+createNavigation();
+
+const cardsContainer = document.getElement("cards");
+assignments.forEach(assignment => {
+    const card = document.createElement("article");
+    card.classList.add("card");
+
+    card.innerHTML = `
+        <h3>${assignment.title}</h3>
+        <p>${assignment.description}</p>
+    `;
+    const link = document.createElement("a");
+    link.href = assignment.link;
+    link.textContent = "Gå till uppgiften";
+    card.appendChild(link);
+
+cardsContainer.appendChild(card);
+});
+</script>
+</body>
+</html>
