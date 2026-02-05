@@ -1,25 +1,35 @@
 import { assignments } from "./assignments.js";
 
 export function createNavigation() {
-    const navList = document.querySelector("nav ul");
-const path = window.location.pathname;
+  const navList = document.querySelector("nav ul");
 
-const isInSubfolder = path.includes("/assignment");
-navList.innerHTML = "";
+  const url = new URL(window.location.href);
+  const parts = url.pathname.split("/").filter(Boolean);
 
-    assignments.forEach(assignment => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
+  // Ta bort filnamnet om det är index.html
+  if (parts[parts.length - 1].endsWith(".html")) {
+    parts.pop();
+  }
 
-        const basePath = isInSubfolder ? "../" :"";
-        a.href = basePath + assignment.link;
-        a.textContent = assignment.title;
+  // parts = ["assignments"] eller ["assignments", "assignment1"]
+  const depthFromRoot = parts.length - 1; // -1 för repo-namnet
 
-        if (path.endsWith(assignment.link)) {
-            a.classList.add("active");
-        }
+  const prefix = depthFromRoot > 0 ? "../".repeat(depthFromRoot) : "";
 
-        li.appendChild(a);
-        navList.appendChild(li);
-    });
+  navList.innerHTML = "";
+
+  assignments.forEach(assignment => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.href = prefix + assignment.link;
+    a.textContent = assignment.title;
+
+    if (window.location.pathname.endsWith(assignment.link)) {
+      a.classList.add("active");
+    }
+
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
 }
