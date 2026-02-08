@@ -4,9 +4,9 @@ body {
 }
 
 header {
-    background: #222;
-    color: white;
-    padding: 1rem;
+    background: linear-gradient(135deg, #ffd6e8, #e6d9ff);
+    color: #5a2a82;
+    border-bottom: 3px solid #ffb6c1;
 }
 
 nav ul {
@@ -17,12 +17,15 @@ nav ul {
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+    color: #5a2a82;
+    font-weight: 600;
 }
 
 nav a.active {
-    border-bottom: 2px solid white;
+    background: #ff8fab;
+    color: white;
+    padding: 0.5rem 0.6rem;
+    border-radius: 999px;
 }
 
 main {
