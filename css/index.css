@@ -1,0 +1,84 @@
+:root { 
+    --pink: #ffb6c1;
+    --pink-dark: #ff8fab;
+    --lavender: #e6d9ff;
+    --cream: #fff6ee;
+    --text: #4a3f55;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--lavender));
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden; 
+}
+
+.card::before {
+    content: "✨";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 30px rgba(255, 182, 193, 0.5);
+}
+
+.card p {
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5 1rem;
+    background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 12px rgba(255, 143, 171, 0.4);
+}
+
+.card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 143, 171, 0.6);
+}
+
+/*om mig sektion*/
+main section:last-of-type {
+    background: #fff0f6;
+    padding: 1.5rem 2rem;
+    border-radius: 18px;
+    border: 2px dashed #ffb6c1;
+}
+
+main section:last-of-type h2 {
+    margin-top: 0;
+    color: #ff5d8f;
+}
+
+main section:last-of-type p {
+    margin: 0.25rem 0;
+    color: var(--text);
+}
