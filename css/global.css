@@ -7,6 +7,8 @@ header {
     background: linear-gradient(135deg, #ffd6e8, #e6d9ff);
     color: #5a2a82;
     border-bottom: 3px solid #ffb6c1;
+    position: relative;
+    z-index: 10;
 }
 
 nav ul {
@@ -14,22 +16,28 @@ nav ul {
     display: flex;
     gap: 1rem;
     padding: 0;
+    align-items: center;
 }
 
 nav a {
-    color: #5a2a82;
-    font-weight: 600;
+    color: #6a2dbf;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 nav a.active {
     background: #ff8fab;
     color: white;
-    padding: 0.5rem 0.6rem;
+    padding: 0.3rem 0.7rem;
     border-radius: 999px;
 }
 
 main {
-    padding-left: 2rem;
+    padding: 2rem;
 }
 
 .card {
