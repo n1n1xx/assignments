@@ -1,1 +1,45 @@
-/* specifik styling för assignment 2 */
+.layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card button {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.cart {
+    border: 2px solid #333;
+    padding: 1rem;
+    background: #f9f9f9;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart li {
+    margin-bottom: 0.5rem;
+}

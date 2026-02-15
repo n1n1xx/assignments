@@ -2,26 +2,27 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
-<title>Uppgift 2</title>
+<title>Uppgift 2 - Produktsida</title>
 <link rel="stylesheet" href="../css/global.css">
 <link rel="stylesheet" href="assignment2.css">
 </head>
 <body>
-    <header>
-        <h1>Uppgift 2</h1>
-        <nav>
-            <ul></ul>
-        </nav>
-    </header>
+    <header id="nav"></header>
+    <main class="layout">
+      <section id="product-list" class="products"></section>  
 
-    <main>
-        <h2>Uppgift 2</h2>
-        <p>
-            Denna uppgift går ut på att skapa en produktsida där produkter renderas dynamiskt från en egen datastruktur samt att implementera en kundvagn som sparar användarens val även när webbläsaren stängs.
-        </p>
+      <aside class="cart">
+          <h2>Kundvagn</h2>
+          <ul id="cart-items"></ul>
+          <p id="total-price">Totalt: 0kr</p>
+          <button id="clear-cart">Töm kundvagn</button>
+      </aside>
+    </main> 
+
+    <footer>
+        <p>© 2026 Min Webbshop</p>
         <a href="../index.html">Tillbaka till startsidan</a>
-    </main>
-
+    </footer>
     <script type="module">
         import { createNavigation } from '../js/navigation.js';
         createNavigation();
