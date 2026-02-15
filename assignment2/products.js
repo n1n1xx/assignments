@@ -9,7 +9,7 @@ export const products = [
 
 { id: "cl-005", name: "Hoodie Grå", description: "Mysig hoodie i bomull.", price: 499, image: "./images/hoodie01.jpg", category: "Hoodie" },
 
-{ id: "cl-006", name: "Hoodie Svart", description: "Stilren hoodie i svart.", price: 549, image: "./images/hoodie02.jpg", category: "Hoodie" },
+{ id: "cl-006", name: "Hoodie Vit", description: "Stilren hoodie i vit.", price: 549, image: "./images/hoodie02.jpg", category: "Hoodie" },
 
 { id: "cl-007", name: "Casual Skjorta", description: "Avslappnad skjorta i bomull.", price: 399, image: "./images/shirt01.jpg", category: "Skjorta" },
 
