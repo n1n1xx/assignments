@@ -1,0 +1,150 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:30px;
+
+/* bakgrundsmönster */
+background:
+linear-gradient(135deg,#fff6e9 25%,transparent 25%) -50px 0,
+linear-gradient(225deg,#fff6e9 25%,transparent 25%) -50px 0,
+linear-gradient(315deg,#fff6e9 25%,transparent 25%),
+linear-gradient(45deg,#fff6e9 25%,transparent 25%);
+background-size:100px 100px;
+background-color:#ffe0b3;
+}
+
+/* header */
+
+header{
+margin-bottom:20px;
+}
+
+h1{
+color:#b23c17;
+}
+
+/* kontrollknappar */
+
+.controls{
+display:flex;
+gap:12px;
+margin-bottom:30px;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+#simulateBtn{
+background:#e67e22;
+color:white;
+}
+
+#simulateBtn:hover{
+background:#cf711f;
+}
+
+#restartBtn{
+background:#2c3e50;
+color:white;
+}
+
+#restartBtn:hover{
+background:#1a242f;
+}
+
+/* bracket */
+
+.bracket{
+display:flex;
+flex-direction:row;
+align-items:stretch;
+gap:2rem;
+}
+
+/* rundor */
+
+.round{
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+gap:1rem;
+}
+
+/* matcher */
+
+.match{
+background:white;
+border-radius:10px;
+padding:14px;
+width:260px;
+border:3px solid #f0a500;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* spelare */
+
+.player{
+padding:8px;
+margin-bottom:6px;
+background:#fff7ed;
+border-radius:4px;
+}
+
+/* vinnare */
+
+.winner{
+background:#b8f7b8;
+font-weight:bold;
+border:1px solid #27ae60;
+}
+
+/* förlorare */
+
+.loser{
+opacity:0.35;
+}
+
+/* rubriker */
+
+.round h2{
+text-align:center;
+color:#8a3c00;
+}
+
+main{
+max-width:1200px;
+margin:auto;
+}
+
+/* stor header-bar */
+
+.top-header{
+background:linear-gradient(90deg,#e67e22,#f39c12);
+color:white;
+padding:30px 40px;
+margin:-30px -30px 30px -30px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+text-align: center;
+}
+
+/* titel i headern */
+
+.top-header h1{
+margin:0;
+font-size:40px;
+letter-spacing:2px;
+color:white;
+}
+
+/* undertitel */
+
+.top-header p{
+margin-top:5px;
+font-size:16px;
+opacity:0.9;
+}
