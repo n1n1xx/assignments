@@ -11,5 +11,13 @@ export const assignments = [
     title: "Uppgift 2 - Produktsida med kundvagn",
    link: "assignment2/index.html",
    description: "Bygga en produktsida som dynamiskt renderar produkter från en egen datastruktur och implementerar en kundvagn som sparar användarens val i webbläsaren."
-   }
+   },
+
+   {
+   id: "assignment3",
+   title: "Uppgift 3 – Turneringsgeneratorn",
+   description: "Visualisering av en turnering",
+   link: "assignments/assignment3/index.html"
+}
+
 ];
