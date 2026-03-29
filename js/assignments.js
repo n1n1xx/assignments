@@ -17,14 +17,14 @@ export const assignments = [
    id: "assignment3",
    title: "Uppgift 3 – Turneringsgeneratorn",
    description: "Visualisering av en turnering",
-   link: "assignments/assignment3/index.html"
+   link: "assignment3/index.html"
 },
 
 {
   id: "assignment4",
   title: "Spökhusbyrån",
   description: "Hyr hemsökta hus och boka din skräcksemester",
-  link: "assignments/assignment4/index.html"
+  link: "assignment4/index.html"
 }
 
 ];
