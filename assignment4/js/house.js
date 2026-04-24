@@ -56,13 +56,11 @@ function renderHouse(house) {
     <div id="weather"></div>
   `;
 
-  const booking = new Booking(house);
-
   const form = document.querySelector("#booking-form");
   const totalEl = document.querySelector("#total");
 
   function updatePrice() {
-    const days = document.querySelector("#days").value;
+    const days = parseInt(document.querySelector("#days").value);
 
     const extras = {
       breakfast: document.querySelector("#breakfast").checked,
@@ -72,7 +70,9 @@ function renderHouse(house) {
 
     const code = document.querySelector("#code").value;
 
-    const total = booking.calculateTotal(days, extras, code);
+    const tempBooking = new Booking(house, "temp", "2026-01-01", days, extras, code);
+
+    const total = tempBooking.calculateTotal();
     totalEl.textContent = `Total: ${total} kr`;
   }
 
@@ -82,21 +82,29 @@ function renderHouse(house) {
     e.preventDefault();
 
     const date = document.querySelector("#date").value;
-    const days = document.querySelector("#days").value;
+    const days = parseInt(document.querySelector("#days").value);
 
-    if (!date || days < 1) {
-      document.querySelector("#confirmation").innerHTML =
-        "<p class='error'>Fel i formulär</p>";
-      return;
-    }
+    const extras = {
+      breakfast: document.querySelector("#breakfast").checked,
+      tour: document.querySelector("#tour").checked,
+      seance: document.querySelector("#seance").checked
+    };
 
-    document.querySelector("#confirmation").innerHTML = `
+    const code = document.querySelector("#code").value;
+
+    const booking = new Booking(house, "Gäst", date, days, extras, code);
+
+    try {
+      booking.validate();
+
+      document.querySelector("#confirmation").innerHTML = `
       <h3>Bokning klar 👻</h3>
-      <p>${house.name}</p>
-      <p>Datum: ${date}</p>
-      <p>${days} dagar</p>
-      <p>${totalEl.textContent}</p>
+      <p>${booking.getConfirmation()}</p>
     `;
+    } catch (error) {
+      document.querySelector("#confirmation").innerHTML =
+        `<p class="error">${error.message}</p>`;
+    }
   });
 
   updatePrice();

@@ -4,7 +4,7 @@ export class Booking {
     this.name = name;
     this.date = date;
     this.days = days;
-    this.extras = extras;
+    this.extras = extras; 
     this.code = code;
   }
 
