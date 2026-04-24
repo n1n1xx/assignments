@@ -45,12 +45,13 @@ export class Booking {
 
   getConfirmation() {
     return `
-    Bokning bekräftad!
-    Namn: ${this.name}
-    Boende: ${this.house.name}
-    Datum: ${this.date}
-    Antal dagar: ${this.days}
-    Totalt pris: ${this.calculateTotal()} kr
+    <ul>
+    <li><strong>Namn: ${this.name}</strong></li>
+    <li><strong>Boende: ${this.house.name}</strong></li>
+    <li><strong>Datum: ${this.date}</strong></li>
+    <li><strong>Antal dagar: ${this.days}</strong></li>
+    <li><strong>Totalt pris: ${this.calculateTotal()} kr</strong></li>
+    </ul>
     `; 
   }
 }
