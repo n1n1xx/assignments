@@ -47,7 +47,6 @@ export class Booking {
   getConfirmation() {
     return `
     <ul>
-    <li><strong>Namn: ${this.name}</strong></li>
     <li><strong>Boende: ${this.house.name}</strong></li>
     <li><strong>Datum: ${this.date}</strong></li>
     <li><strong>Antal dagar: ${this.days}</strong></li>
