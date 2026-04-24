@@ -11,7 +11,12 @@ export class Booking {
   isValidDate() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return new Date(this.date) >= today;
+
+    const selectedDate = new Date(this.date);
+
+    if (isNaN(selectedDate)) return false;
+
+    return selectedDate >= today;
   }
 
   validate() {
