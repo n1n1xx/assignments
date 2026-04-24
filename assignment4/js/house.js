@@ -94,7 +94,7 @@ function renderHouse(house) {
 
     const code = document.querySelector("#code").value;
 
-    const booking = new Booking(house, "Gäst", date, days, extras, code);
+    const booking = new Booking(house, date, days, extras, code);
 
     try {
       booking.validate();
