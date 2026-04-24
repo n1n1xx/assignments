@@ -11,6 +11,10 @@
 
 <header class="top-header">
 <h1>🍳 Kockduellen</h1>
+
+<nav>
+    <ul></ul>
+</nav>
 </header>
 
 <main>
@@ -33,7 +37,10 @@ Starta om turneringen
 
 </main>
 
-<script type="module" src="js/main.js"></script>
+<script type="module">
+    import { createNavigation } from "../js/navigation.js";
+    createNavigation();
+</script>
 
 </body>
 </html>
