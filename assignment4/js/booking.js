@@ -8,10 +8,12 @@ export class Booking {
   }
 
   isValidDate() {
+    if (!this.date) return false;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const selectedDate = new Date(this.date);
+    const [year, month, day] = this.date.split("-");
+    const selectedDate = new Date(year, month - 1, day);
 
     if (isNaN(selectedDate)) return false;
 
@@ -19,7 +21,7 @@ export class Booking {
   }
 
   validate() {
-    if (!this.name || !this.date || !this.days) {
+    if (!this.date || !this.days) {
       throw new Error("Fyll i alla fält");
     }
 
