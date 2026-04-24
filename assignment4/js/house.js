@@ -62,6 +62,7 @@ function renderHouse(house) {
   const totalEl = document.querySelector("#total");
 
   function updatePrice() {
+    const date = document.querySelector("#date").value; 
     const days = parseInt(document.querySelector("#days").value);
 
     const extras = {
@@ -72,7 +73,7 @@ function renderHouse(house) {
 
     const code = document.querySelector("#code").value;
 
-    const tempBooking = new Booking(house, "2026-01-01", days, extras, code);
+    const tempBooking = new Booking(house, date, days, extras, code);
 
     const total = tempBooking.calculateTotal();
     totalEl.textContent = `Total: ${total} kr`;
