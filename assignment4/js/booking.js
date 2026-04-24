@@ -21,7 +21,7 @@ export class Booking {
   }
 
   validate() {
-    if (!this.date || !this.days) {
+    if (!this.date || isNaN(this.days) ||  this.days < 1) {
       throw new Error("Fyll i alla fält");
     }
 
@@ -31,11 +31,14 @@ export class Booking {
   }
 
   calculateTotal() {
-    let total = this.house.pricePerNight * this.days;
+    const days = parseInt(this.days) || 1;
+    const extras = this.extras || {};
+    
+    let total = this.house.pricePerNight * days;
 
-    if (this.extras.breakfast) total += 100 * this.days;
-    if (this.extras.tour) total += 300;
-    if (this.extras.seance) total += 500;
+    if (extras.breakfast) total += 100 * days;
+    if (extras.tour) total += 300;
+    if (extras.seance) total += 500;
 
     if (this.code === "GHOST20") {
       total *= 0.8;
