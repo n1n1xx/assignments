@@ -57,6 +57,8 @@ function renderHouse(house) {
   `;
 
   const form = document.querySelector("#booking-form");
+  document.querySelector("#date").min = new Date().toISOString().split("T")[0];
+
   const totalEl = document.querySelector("#total");
 
   function updatePrice() {
